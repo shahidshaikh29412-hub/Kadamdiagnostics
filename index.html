@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kadam Diagnostic & Pathology Laboratory | Premium Healthcare Services</title>
+    <style>
+        :root {
+            --primary: #0a4275;
+            --secondary: #0d9488;
+            --accent: #f59e0b;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #062847;
+            color: white;
+            padding: 8px 20px;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .top-bar a { color: #38bdf8; text-decoration: none; font-weight: bold; }
+
+        /* Header / Navbar */
+        header {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 2px solid var(--secondary);
+            object-fit: cover;
+        }
+
+        .logo-text h2 {
+            font-size: 18px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(10, 66, 117, 0.95), rgba(13, 148, 136, 0.9)), url('https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+        }
+
+        .btn-primary { background-color: var(--accent); color: #000; }
+        .btn-primary:hover { background-color: #e08e06; }
+        .btn-outline { background-color: transparent; color: white; border: 2px solid white; margin-left: 10px; }
+        .btn-outline:hover { background-color: white; color: var(--primary); }
+
+        /* Container Section Wrapper */
+        .container {
+            max-width: 1140px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 24px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Search Section */
+        .search-box {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+        }
+
+        /* Grid Framework */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        /* Test Items */
+        .test-card {
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+        .test-card:hover { transform: translateY(-2px); }
+        .test-badge { background: #ccfbf1; color: #0f766e; font-size: 11px; padding: 3px 8px; border-radius: 12px; }
+
+        /* Packages & Features */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        .card h3 { font-size: 18px; margin-bottom: 10px; color: var(--primary); }
+        .card p { color: var(--text-muted); font-size: 14px; margin-bottom: 15px; }
+        .card .price { font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 15px; }
+
+        /* Form Styling */
+        .booking-form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--primary); }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 14px; outline: none;
+        }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--secondary); }
+
+        .btn-submit {
+            background-color: var(--secondary); color: white; width: 100%; padding: 14px; font-size: 16px; border-radius: 6px; font-weight: bold;
+        }
+        .btn-submit:hover { background-color: #0f766e; }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+
+        footer h3 { color: white; margin-bottom: 10px; }
+        footer a { color: #38bdf8; text-decoration: none; }
+
+        @media(max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .hero h1 { font-size: 24px; }
+            .btn-outline { margin-left: 0; margin-top: 10px; display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div>📍 Pandharpur | 📞 Emergency Helpline: 8087870121</div>
+        <div>NABL-style Guidelines Compliant Lab</div>
+    </div>
+
+    <!-- Professional Navbar -->
+    <header>
+        <div class="logo-area">
+            <img src="1000353663.jpg" class="logo-img" alt="Kadam Lab Logo">
+            <div class="logo-text">
+                <h2>Kadam Diagnostic & Pathology Laboratory</h2>
+                <p>Dr. Pratibha Kadam (MBBS, MD Pathologist) • Lab Owner: Mr. Ajay Kadam</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Premium Hero Section -->
+    <section class="hero">
+        <h1>Accurate Reports. Trusted Healthcare.</h1>
+        <p>Experience Metropolis-like premium diagnostic services at your doorstep. Get highly accurate pathology reports from certified experts with advanced automated equipment.</p>
+        <a class="btn btn-primary" href="tel:8087870121">📞 Call for Home Collection</a>
+        <a class="btn btn-outline" href="https://www.instagram.com/kadam__lab?igsh=azkwOXFsM3ppNGhh" target="_blank">Follow Instagram</a>
+    </section>
+
+    <div class="container">
+        
+        <!-- Live Search Box Section -->
+        <div class="section-title">
+            <h2>Available Medical Tests</h2>
+        </div>
+        <div class="search-box">
+            <input id="q" type="text" placeholder="🔍 Search test name (e.g., CBC, HbA1c, Vitamin D, Lipid Profile...)" onkeyup="f()">
+            <div id="list" class="grid" style="margin-top: 25px;">
+                <div class="test-card"><span>CBC</span><span class="test-badge">Pathology</span></div>
+                <div class="test-card"><span>Blood Sugar</span><span class="test-badge">Diabetes</span></div>
+                <div class="test-card"><span>HbA1c</span><span class="test-badge">Diabetes</span></div>
+                <div class="test-card"><span>Lipid Profile</span><span class="test-badge">Heart</span></div>
+                <div class="test-card"><span>LFT (Liver Function)</span><span class="test-badge">Liver</span></div>
+                <div class="test-card"><span>KFT (Kidney Function)</span><span class="test-badge">Kidney</span></div>
+                <div class="test-card"><span>TSH / T3 / T4</span><span class="test-badge">Thyroid</span></div>
+                <div class="test-card"><span>Vitamin D</span><span class="test-badge">Vitamins</span></div>
+                <div class="test-card"><span>Vitamin B12</span><span class="test-badge">Vitamins</span></div>
+                <div class="test-card"><span>CRP & ESR</span><span class="test-badge">Infection</span></div>
+                <div class="test-card"><span>Ferritin / Iron Profile</span><span class="test-badge">Anemia</span></div>
+                <div class="test-card"><span>Calcium / Electrolytes</span><span class="test-badge">Metabolic</span></div>
+                <div class="test-card"><span>Creatinine</span><span class="test-badge">Kidney</span></div>
+                <div class="test-card"><span>Dengue / Typhoid / Malaria</span><span class="test-badge">Fever</span></div>
+                <div class="test-card"><span>Urine Routine</span><span class="test-badge">Urine</span></div>
+                <div class="test-card"><span>PSA (Prostate)</span><span class="test-badge">Cancer Screen</span></div>
+                <div class="test-card"><span>Beta HCG / Prolactin</span><span class="test-badge">Hormones</span></div>
+                <div class="test-card"><span>HIV / HBsAg / HCV</span><span class="test-badge">Serology</span></div>
+                <div class="test-card"><span>D-Dimer</span><span class="test-badge">Thrombosis</span></div>
+                <div class="test-card"><span>Amylase / Lipase</span><span class="test-badge">Pancreas</span></div>
+            </div>
+        </div>
+
+        <!-- Health Packages Section -->
+        <div class="section-title">
+            <h2>Popular Health Checkup Packages</h2>
+        </div>
+        <div class="grid" style="margin-bottom: 50px;">
+            <div class="card">
+                <h3>Standard Wellness Package</h3>
+                <p>Essential body checkup covering CBC, Diabetes, Cholesterol, Liver & Kidney profile.</p>
+                <div class="price">Premium Care</div>
+                <button class="btn btn-primary" style="width:100%;" onclick="selectPackage('Standard Wellness')">Select Package</button>
+            </div>
+            <div class="card">
+                <h3>Executive Full Body Checkup</h3>
+                <p>Comprehensive health assessment including Advanced Vitamins, Thyroid, and Iron status.</p>
+                <div class="price">Complete Screening</div>
+                <button class="btn btn-primary" style="width:100%;" onclick="selectPackage('Executive Full Body')">Select Package</button>
+            </div>
+            <div class="card">
+                <h3>Advanced Diabetes Care</h3>
+                <p>Track your long term diabetes control with HbA1c, Average Blood Glucose, and Urine microalbumin.</p>
+                <div class="price">Targeted Control</div>
+                <button class="btn btn-primary" style="width:100%;" onclick="selectPackage('Advanced Diabetes')">Select Package</button>
+            </div>
+        </div>
+
+        <!-- Core Features Section -->
+        <div class="section-title">
+            <h2>Why Choose Kadam Diagnostics?</h2>
+        </div>
+        <div class="grid" style="margin-bottom: 50px; text-align: center;">
+            <div class="card" style="border-top-color: var(--secondary);">
+                <h3>MD Pathologist Verified</h3>
+                <p>All laboratory tests are closely examined and authenticated by Dr. Pratibha Kadam (MBBS, MD).</p>
+            </div>
+            <div class="card" style="border-top-color: var(--secondary);">
+                <h3>Home Sample Collection</h3>
+                <p>Avoid long queues. Our trained phlebotomists will collect samples safely from your home or office.</p>
+            </div>
+            <div class="card" style="border-top-color: var(--secondary);">
+                <h3>Fast & Accurate Turnaround</h3>
+                <p>Advanced digital automation allows us to deliver high-precision reports directly on your mobile within hours.</p>
+            </div>
+        </div>
+
+        <!-- Premium Registration Form -->
+        <div class="section-title">
+            <h2>Schedule a Home Collection / Book a Test</h2>
+        </div>
+        <div class="booking-form">
+            <div class="form-group">
+                <label for="n">Patient Full Name</label>
+                <input id="n" type="text" placeholder="Enter patient's name">
+            </div>
+            <div class="form-group">
+                <label for="m">Mobile Number</label>
+                <input id="m" type="tel" placeholder="Enter 10-digit phone number">
+            </div>
+            <div class="form-group">
+                <label for="t">Required Test / Package</label>
+                <input id="t" type="text" placeholder="e.g., CBC, Full Body Checkup">
+            </div>
+            <div class="form-group">
+                <label for="a">Full Address (for Home Collection)</label>
+                <textarea id="a" rows="3" placeholder="Enter your full doorstep address"></textarea>
+            </div>
+            <button class="btn btn-submit" onclick="wa()">💬 Book Appointment via WhatsApp</button>
+        </div>
+
+    </div>
+
+    <!-- Professional Footer -->
+    <footer>
+        <h3>Kadam Diagnostic & Pathology Laboratory</h3>
+        <p style="margin-bottom: 15px;">Reliable Diagnostics. Healthier Tomorrow.</p>
+        <p>Main Branch: Pandharpur, Maharashtra</p>
+        <p>Contact No: <a href="tel:8087870121">8087870121</a> | <a href="https://maps.app.goo.gl/HpiVwonxWRC6aydu8?g_st=ac" target="_blank">📍 View on Google Maps</a></p>
+        <p style="margin-top: 25px; font-size: 12px; opacity: 0.6;">&copy; 2026 Kadam Diagnostic & Pathology Lab. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Realtime Filter Functionality
+        function f() {
+            let v = document.getElementById('q').value.toLowerCase();
+            document.querySelectorAll('.test-card').forEach(x => {
+                x.style.display = x.innerText.toLowerCase().includes(v) ? 'flex' : 'none';
+            });
+        }
+
+        // Auto-fill Test package in form
+        function selectPackage(packageName) {
+            document.getElementById('t').value = packageName + " Package";
+            document.getElementById('t').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // WhatsApp Messaging Logic
+        function wa() {
+            let name = document.getElementById('n').value;
+            let mobile = document.getElementById('m').value;
+            let test = document.getElementById('t').value;
+            let address = document.getElementById('a').value;
+            
+            if(!name || !mobile) {
+                alert("Please fill Name and Mobile number at least.");
+                return;
+            }
+
+            let msg = `*NEW BOOKING RECEIVED - KADAM LAB*%0A%0A` +
+                      `👤 *Patient:* ${name}%0A` +
+                      `📱 *Mobile:* ${mobile}%0A` +
+                      `🧪 *Test/Package:* ${test || 'Not Specified'}%0A` +
+                      `🏠 *Address:* ${address || 'Lab Visit'}`;
+            
+            window.open('https://wa.me/918087870121?text=' + msg);
+        }
+    </script>
+</body>
+</html>
