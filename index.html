@@ -3,337 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kadam Diagnostics | Precision in every test.</title>
-    <style>
-        :root {
-            --primary-blue: #004aad;
-            --secondary-green: #00a859;
-            --text-dark: #333333;
-            --light-bg: #f8f9fa;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Top Bar */
-        .top-bar {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 8px 10%;
-            display: flex;
-            justify-content: space-between;
-            font-size: 14px;
-            flex-wrap: wrap;
-        }
-
-        .top-bar a {
-            color: white;
-            text-decoration: none;
-            margin-left: 15px;
-        }
-
-        /* Navbar */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 10%;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo-img {
-            height: 60px; /* Adjust based on logo proportions */
-            object-fit: contain;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 25px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary-green);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(0,74,173,0.05) 0%, rgba(0,168,89,0.05) 100%);
-            padding: 80px 10%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .hero-text {
-            max-width: 550px;
-        }
-
-        .hero-text h1 {
-            font-size: 42px;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-        }
-
-        .hero-text p {
-            font-size: 18px;
-            margin-bottom: 25px;
-            color: #555;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: var(--secondary-green);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #008744;
-        }
-
-        /* Features Section */
-        .services {
-            padding: 60px 10%;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 32px;
-            color: var(--primary-blue);
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--secondary-green);
-            margin: 10px auto 0;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--primary-blue);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-            color: var(--primary-blue);
-        }
-
-        /* Doctor Profile Section */
-        .doctor-section {
-            background-color: var(--light-bg);
-            padding: 60px 10%;
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .doc-info {
-            max-width: 600px;
-        }
-
-        .doc-badge {
-            background: var(--primary-blue);
-            color: white;
-            padding: 5px 10px;
-            font-size: 14px;
-            border-radius: 4px;
-        }
-
-        /* Contact & Footer */
-        footer {
-            background: #222;
-            color: white;
-            padding: 50px 10%;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-
-        .footer-col h4 {
-            color: var(--secondary-green);
-            margin-bottom: 20px;
-        }
-
-        .footer-col p, .footer-col a {
-            color: #bbb;
-            text-decoration: none;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            font-size: 14px;
-            color: #888;
-        }
-
-        @media (max-width: 768px) {
-            .top-bar, nav, .hero, .doctor-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            .nav-links {
-                margin-top: 20px;
-            }
-            .nav-links li {
-                margin: 0 10px;
-            }
-            .hero-text {
-                margin-bottom: 40px;
-            }
-        }
-    </style>
+    <title>Kadam Diagnostic | NABL & ISO Certified Lab Pandharpur</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-gray-50 font-sans text-gray-800">
 
-    <!-- Top Contact Bar -->
-    <div class="top-bar">
-        <div>📍 Address: Tulsi Vrindavan, Padmavati Plaza, Pandharpur</div>
-        <div>
-            📞 Call: <a href="tel:8087870121">8087870121</a> | <a href="tel:8983590212">89835 90212</a>
+    <div class="bg-blue-900 text-white text-xs py-2 px-4 flex justify-between items-center flex-wrap gap-2">
+        <div><i class="fas fa-shield-alt text-green-400"></i> SSL Secured Connection (HTTPS) | <i class="fas fa-award text-yellow-400"></i> NABL & ISO Certified Laboratory</div>
+        <div class="flex gap-4">
+            <a href="tel:+918087870121"><i class="fas fa-phone"></i> Emergency Contact: +91 8087870121</a>
         </div>
     </div>
 
-    <!-- Navigation Header -->
-    <nav>
-        <div class="logo-container">
-            <!-- Referencing your image logo here -->
-            <img src="1000355086.jpg" alt="Kadam Diagnostics Logo" class="logo-img">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="1000353663.jpg" alt="Kadam Diagnostic Logo" class="h-12 w-12 rounded-full object-cover border-2 border-blue-600 error-fallback" onerror="this.src='https://placehold.co/100x100?text=KD+Lab'">
+                <div>
+                    <div class="text-xl font-bold text-blue-900 tracking-tight">Kadam Diagnostic</div>
+                    <div class="text-[10px] text-gray-500 font-medium tracking-wider uppercase">Pathology Laboratory</div>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-6 font-medium text-sm">
+                <a href="#home" class="hover:text-blue-600 transition">Home</a>
+                <a href="#tests" class="hover:text-blue-600 transition">Test Menu</a>
+                <a href="#booking" class="hover:text-blue-600 transition">Book Test</a>
+                <a href="#reports" class="hover:text-blue-600 transition">Download Reports</a>
+                <a href="#admin" class="text-red-500 hover:text-red-700 transition"><i class="fas fa-user-shield"></i> Admin Panel</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <a href="https://www.instagram.com/kadam__lab?igsh=azkwOXFsM3ppNGhh" target="_blank" class="text-pink-600 hover:text-pink-700 text-xl p-2" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/918087870121" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 hover:bg-green-600 shadow-sm transition">
+                    <i class="fab fa-whatsapp text-sm"></i> WhatsApp
+                </a>
+            </div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Our Tests</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-text">
-            <h1>Kadam Diagnostics</h1>
-            <p><strong>Precision in every test.</strong> Get highly accurate diagnostic services led by expert professionals right here in Pandharpur.</p>
-            <a href="https://wa.me/918087870121?text=Hi,%20I%20want%20to%20book%20a%20test" class="btn" target="_blank">Book Free Home Collection</a>
-        </div>
-    </section>
+    <main class="max-w-7xl mx-auto px-4 py-8 space-y-16">
 
-    <!-- Services / Tests Section -->
-    <section class="services" id="services">
-        <h2 class="section-title">Our Diagnostic Services</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Blood Tests</h3>
-                <p>Complete Blood Count (CBC), Blood Sugar, HbA1c, and full lipid profiles with fast reporting.</p>
-            </div>
-            <div class="card">
-                <h3>Pathology</h3>
-                <p>Comprehensive tissue and fluid analysis conducted under expert supervision.</p>
-            </div>
-            <div class="card">
-                <h3>Health Packages</h3>
-                <p>Complete executive and master health checkups tailored for all age groups.</p>
-            </div>
-            <div class="card">
-                <h3>Home Sample Collection</h3>
-                <p>Professional and hygienic blood/sample collection from the comfort of your home.</p>
-            </div>
-        </div>
-    </section>
+        <section id="home" class="grid md:grid-cols-2 gap-8 items-center bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <div class="space-y-5">
+                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Accurate • Reliable • Fast</span>
+                <h1 class="text-4xl font-extrabold text-gray-900 leading-tight">Advanced Diagnostics Managed by Expert Pathologists</h1>
+                
+                <div class="flex items-start gap-4 p-4 bg-blue-50 rounded-xl border border-blue-100">
+                    <div class="bg-blue-600 text-white p-3 rounded-xl">
+                        <i class="fas fa-user-md text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-900 text-lg">Dr. Pratibha Kadam</h3>
+                        <p class="text-blue-800 text-sm font-semibold">MBBS, MD (Pathologist)</p>
+                        <p class="text-gray-500 text-xs mt-1">Chief Consultant Pathologist overseeing all clinical test evaluations.</p>
+                    </div>
+                </div>
 
-    <!-- Expert / About Section -->
-    <section class="doctor-section" id="about">
-        <div class="doc-info">
-            <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Led by Experts</h2>
-            <span class="doc-badge">Chief Pathologist</span>
-            <h3 style="font-size: 24px; margin: 10px 0 5px 0; color: var(--primary-blue);">Dr. Pratibha Kadam</h3>
-            <p style="font-weight: 600; color: #555; margin-bottom: 15px;">MBBS, MD (Pathologist)</p>
-            <p>At Kadam Diagnostics, every sample is processed using top-tier laboratory equipment under the direct supervision of Dr. Pratibha Kadam to guarantee the highest level of accuracy and medical excellence.</p>
-            <br>
-            <p><strong>Management & Operations:</strong> Co-managed efficiently by Mr. Ajay Kadam to ensure smooth client service and timely report deliveries.</p>
-        </div>
-    </section>
+                <p class="text-gray-600 text-sm leading-relaxed">Welcome to Kadam Diagnostic. We provide automated clinical pathology, biochemistry, and hematology analysis using cutting-edge medical equipment. Our mission is to provide premium diagnostics locally in Pandharpur.</p>
+                
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <a href="#booking" class="bg-blue-600 text-white px-6 py-3 rounded-xl font-medium text-sm shadow-md hover:bg-blue-700 transition">Book Home Collection</a>
+                    <a href="#tests" class="border border-gray-300 text-gray-700 px-6 py-3 rounded-xl font-medium text-sm hover:bg-gray-50 transition">View Pricing List</a>
+                </div>
+            </div>
 
-    <!-- Footer / Contact Section -->
-    <footer id="contact">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Kadam Diagnostics</h4>
-                <p>Precision in every test.</p>
-                <a href="https://www.instagram.com/kadam__lab?igsh=azkwOXFsM3ppNGhh" target="_blank" style="color: #e1306c; font-weight: bold;">📸 Follow us on Instagram</a>
+            <div class="bg-gradient-to-br from-gray-900 to-blue-950 text-white p-8 rounded-2xl space-y-4 shadow-md">
+                <h3 class="text-xl font-bold text-yellow-400"><i class="fas fa-percentage text-red-400"></i> Special Promotional Health Packages</h3>
+                <div class="p-4 bg-white/10 rounded-xl border border-white/10 space-y-1">
+                    <div class="font-bold text-base text-white">Kadam Executive Health Checkup</div>
+                    <div class="text-xs text-gray-300">Includes 60+ vital parameters (CBC, LFT, KFT, Lipid Profile, Diabetic Index)</div>
+                    <div class="pt-2 text-xl font-black text-yellow-400">₹1,499 <span class="text-xs text-gray-400 line-through font-normal">₹3,500</span> <span class="text-xs bg-red-500 text-white px-2 py-0.5 rounded ml-2">Save 57%</span></div>
+                </div>
+                <div class="text-xs text-gray-400 flex items-center gap-2 pt-2">
+                    <i class="fas fa-info-circle"></i> Requires 10-12 hours of overnight fasting.
+                </div>
             </div>
-            <div class="footer-col">
-                <h4>Contact Info</h4>
-                <p><strong>Phone:</strong> 8087870121 / 89835 90212</p>
-                <p><strong>Management:</strong> Mr. Ajay Kadam</p>
-            </div>
-            <div class="footer-col">
-                <h4>Our Location</h4>
-                <p>Tulsi Vrindavan, Padmavati Plaza,<br>Pandharpur</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2026 Kadam Diagnostics. All Rights Reserved.
-        </div>
-    </footer>
+        </section>
 
-</body>
-</html>
+        <section id="reports" class="bg-gradient-to-r from-blue-700 to-blue-900 text-white p-8 rounded-2xl shadow-md">
+            <div class="max-w-xl mx-auto text-center space-y-4">
+                <h2 class="text-2xl font-bold"><i class="fas fa-file-invoice-dollar"></i> Online Patient Report Download Portal</h2>
+                <p class="text-blue-100 text-sm">Enter your registered Unique Patient ID or Mobile Number to access your digitally signed reports.</p>
+                <div class="flex gap-2 mt-4">
+                    <input type="text" id="reportId" placeholder="Enter Patient ID or Mobile No." class="w-full px-4 py-3 rounded-xl text-gray-800 focus:outline-none placeholder-gray-400 text-sm">
+                    <button onclick="downloadReport()" class="bg-yellow-400 text-blue-950 px-6 py-3 rounded-xl font-bold text-sm hover:bg-yellow-300 transition whitespace-nowrap">Download PDF</button>
+                </div>
+                <p id="reportStatus" class="text-xs font-semibold mt-2 text-yellow-300 hidden"></p>
+            </div>
+        </section>
+
+        <section id="tests" class="space-y-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-900">Comprehensive Test Directory</h2>
+                <p class="text-gray-500 text-sm">Transparent pricing, no hidden extraction or service charges</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between hover:border-blue-400 transition">
+                    <div>
+                        <div class="flex justify-between items-start gap-2">
+                            <h3 class="font-bold text-base text-gray-900">Complete Blood Count (CBC)</h3>
+                            <span class="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded whitespace-nowrap">4 Hrs Turnaround</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">Comprehensive screen for infections, anemia, platelets, and general immune profiling.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-5 pt-4 border-t border-gray-100">
+                        <span class="text-lg font-black text-blue-900">₹300</span>
+                        <button onclick="selectTest('Complete Blood Count (CBC)', 300)" class="bg-blue-50 text-blue-600 px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-blue-600 hover:text-white transition">Select Test</button>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between hover:border-blue-400 transition">
+                    <div>
+                        <div class="flex justify-between items-start gap-2">
+                            <h3 class="font-bold text-base text-gray-900">HbA1c (Glycated Haemoglobin)</h3>
+                            <span class="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded whitespace-nowrap">6 Hrs Turnaround</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">Evaluates the cumulative average of blood glucose levels over the preceding 3 months.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-5 pt-4 border-t border-gray-100">
+                        <span class="text-lg font-black text-blue-900">₹350</span>
+                        <button onclick="selectTest('HbA1c (Glycated Haemoglobin)', 350)" class="bg-blue-50 text-blue-600 px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-blue-600 hover:text-white transition">Select Test</button>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between hover:border-blue-400 transition">
+                    <div>
+                        <div class="flex justify-between items-start gap-2">
+                            <h3 class="font-bold text-base text-gray-900">Lipid Profile Test</h3>
+                            <span class="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded whitespace-nowrap">8 Hrs Turnaround</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">Evaluates good/bad cholesterol and triglycerides to monitor cardiovascular wellness.</p>
+                    </div>
+                    <div class="flex justify-between items-center mt-5 pt-4 border-t border-gray-100">
+                        <span class="text-lg font-black text-blue-900">₹500</span>
+                        <button onclick="selectTest('Lipid Profile Test', 500)" class="bg-blue-50 text-blue-600 px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-blue-600 hover:text-white transition">Select Test</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="booking" class="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm grid md:grid-cols-2 gap-8">
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-gray-900"><i class="fas fa-calendar-check text-blue-600"></i> Online Digital Booking Desk</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">Book your lab visit appointment or configure a 100% sterile Home Sample Collection. Our certified phlebotomist will arrive safely at your doorstep.</p>
+                
+                <div class="p-4 bg-gray-50 rounded-xl border border-gray-200 space-y-2">
+                    <div class="font-semibold text-xs uppercase tracking-wider text-gray-500">Selected Diagnostics:</div>
+                    <div id="selectedTestDisplay" class="text-blue-700 font-bold text-base">Please choose a test from the menu above or submit a direct custom inquiry.</div>
+                    <div id="testPriceDisplay" class="text-gray-900 font-extrabold text-sm"></div>
+                </div>
+            </div>
+
+            <form id="bookingForm" onsubmit="handleBooking(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Patient Full Name</label>
+                    <input type="text" required class="w-full px-4 py-2 text-sm rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Mobile Number</label>
+                        <input type="tel" value="8087870121" required class="w-full px-4 py-2 text-sm rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Service Method</label>
+                        <select class="w-full px-4 py-2 text-sm rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                            <option>Home Sample Collection</option>
+                            <option>Walk-in Lab Appointment</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Full Address (Required for Home Collections Only)</label>
+                    <textarea rows="2" placeholder="Street, landmark, block info in Pandharpur" class="w-full px-4 py-2 text-sm rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Preferred Gateway Option</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label class="border border-blue-500 bg-blue-50/50 p-3 rounded-xl flex items-center gap-2 cursor-pointer text-xs font-medium">
+                            <input type="radio" name="payment" checked> Digital (UPI / Cards)
+                        </label>
+                        <label class="border border-gray-200 p-3 rounded-xl flex items-center gap-2 cursor-pointer text-xs font-medium">
+                            <input type="radio" name="payment"> Cash on Collection
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-sm shadow-md hover:bg-blue-700 transition">Confirm Booking & Send Automated Alert</button>
+            </form>
+        </section>
+
+        <section class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-gray-900">Verified Patient Testimonials</h3>
+                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-sm">
+                    <p class="text-gray-600 italic">"Highly professional service in Pandharpur. Dr. Pratibha Kadam personally checked the reports, and the sample drawing was completely painless."</p>
+                    <div class="mt-2 font-bold text-gray-800 text-xs">- Rajesh S., Pandharpur</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-sm">
+                    <p class="text-gray-600 italic">"Received our home collection pathology reports directly on WhatsApp with an authenticated verification QR code embedded in the PDF."</p>
+                    <div class="mt-2 font-bold text-gray-800 text-xs">- Meera K., Local Resident</div>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-gray-900">Frequently Asked Questions</h3>
+                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-sm">
+                    <h4 class="font-bold text-gray-800">How long does it take to get test results?</h4>
+                    <p class="text-gray-600 mt-1 text-xs">Standard pathology evaluations (like CBC/Sugar) are uploaded within 4-6 hours.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm text-sm">
+                    <h4 class="font-bold text-gray-800">Are home visits safe and sterilized?</h4>
+                    <p class="text-gray-600 mt-1 text-xs">Yes, all our clinical phlebotomists follow strict guidelines and utilize vacuum sealed single-use components.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="admin" class="bg-gray-900 text-white p-6 rounded-2xl space-y-6">
+            <div class="border-b border-gray-800 pb-4 flex justify-between items-center flex-wrap gap-4">
+                <div>
+                    <h2 class="text-xl font-bold text-red-400"><i class="fas fa-lock"></i> Operational Administration Dashboard</h2>
+                    <p class="text-xs text-gray-400">Strictly authorized clinical staff access environment</p>
+                </div>
+                <span class="bg-red-950 text-red-300 text-xs px-3 py-1 rounded-full font-mono border border-red-900">Secure Live Core</span>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="bg-gray-800/60 p-4 rounded-xl border border-gray-800">
+                    <div class="text-2xl font-black text-blue-400">48</div>
+                    <div class="text-[10px] uppercase font-bold tracking-wider text-gray-400 mt-1">Registrations Today</div>
+                </div>
+                <div class="bg-gray-800/60 p-4 rounded-xl border border-gray-800">
+                    <div class="text-2xl font-black text-emerald-400">₹14,200</div>
+                    <div class="text-[10px] uppercase font-bold tracking-wider text-gray-400 mt-1">Billing Counter</div>
+                </div>
+                <div class="bg-gray-800/60 p-4 rounded-xl border border-gray-800">
+                    <div class="text-2xl font-black text-amber-400">6</div>
+                    <div class="text-[10px] uppercase font-bold tracking-wider text-gray-400 mt-1">Pending Sign-off</div>
+                </div>
+                <div class="bg-gray-800/60 p-4 rounded-xl border border-gray-800">
+                    <div class="text-2xl font-black text-purple-400">12</div>
+                    <div class="text-[10px] uppercase font-bold tracking-wider text-gray-400 mt-1">Referral Matrix</div>
+                </div>
+            </div>
+
+            <div class="bg-gray-800/40 p-4 rounded-xl border border-gray-800 space-y-3">
+                <div class="font-bold text-xs uppercase tracking-widest text-gray-400">System Controls</div>
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="alert('Launching Test Catalog Settings Core...')" class="bg-gray-800 border border-gray-700 hover:bg-gray-700 text-xs px-3 py-2 rounded-lg font-medium transition"><i class="fas fa-sliders-h text-blue-400"></i> Manage Test Catalog</button>
+                    <button onclick="alert('Accessing Encrypted PDF Dispatcher Pipeline...')" class="bg-gray-800 border border-gray-700 hover:bg-gray-700 text-xs px-3 py-2 rounded-lg font-medium transition"><i class="fas fa-cloud-upload-alt text-emerald-400"></i> Upload Reports</button>
+                    <button onclick="alert('Opening Staff Roster Matrix Hub...')" class="bg-gray-800 border border-gray-700 hover:bg-gray-700 text-xs px-3 py-2 rounded-lg font-medium transition"><i class="fas fa-users-cog text-purple-400"></i> Staff Matrix</button>
+                    <button onclick="alert('Backup Core Triggered: Encrypted archive sent to cloud storage clusters.')" class="bg-emerald-900/50 hover:bg-emerald-900 text-emerald-300 border border-emerald-800 text-xs px-3
