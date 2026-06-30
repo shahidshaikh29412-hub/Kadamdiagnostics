@@ -4,279 +4,388 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kadam Diagnostics - Pandharpur</title>
-    <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Logo Inspired Color Palette */
+        /* Exact Colors from Kadam Diagnostics Logo */
         :root {
-            --primary-blue: #004aad;
-            --vibrant-green: #00b050;
-            --accent-red: #ff3b30;
-            --dark-grey: #333333;
-            --light-bg: #f8f9fa;
+            --metropolis-blue: #004aad;
+            --metropolis-green: #00b050;
+            --metropolis-red: #ff3b30;
+            --bg-light: #f4f6f9;
+            --text-dark: #1c2024;
             --white: #ffffff;
+            --border-color: #e3e7ed;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Lato', sans-serif;
         }
 
         body {
-            background-color: var(--light-bg);
-            color: var(--dark-grey);
-            line-height: 1.6;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
         }
 
-        /* Top Bar & Navigation */
-        .top-bar {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 8px 10px;
-            text-align: center;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        header {
+        /* Top Header Navbar */
+        .main-header {
             background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 15px 5%;
+            padding: 12px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo-area {
+        .header-left {
             display: flex;
             align-items: center;
             gap: 15px;
         }
 
-        .logo-img {
-            height: 60px;
+        .logo-container img {
+            height: 55px;
             width: auto;
-            object-fit: contain;
         }
 
-        .brand-text h1 {
-            color: var(--primary-blue);
-            font-size: 1.6rem;
+        .brand-info h1 {
+            font-size: 1.5rem;
+            color: var(--metropolis-blue);
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-info p {
+            font-size: 0.8rem;
+            color: var(--metropolis-green);
             font-weight: 700;
+            text-transform: uppercase;
         }
 
-        .brand-text p {
-            color: var(--vibrant-green);
-            font-size: 0.85rem;
-            font-style: italic;
-            font-weight: 600;
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
-        .nav-buttons .btn {
-            background-color: var(--vibrant-green);
+        .whatsapp-btn {
+            background-color: var(--metropolis-green);
             color: var(--white);
             text-decoration: none;
             padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: 0.3s;
-            display: inline-flex;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
             align-items: center;
             gap: 8px;
+            text-transform: uppercase;
         }
 
-        .nav-buttons .btn:hover {
-            background-color: var(--primary-blue);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(0,74,173,0.05) 0%, rgba(0,176,80,0.05) 100%);
-            padding: 60px 5%;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 2.2rem;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-        }
-
-        .doctor-badge {
-            background: var(--white);
-            border-left: 5px solid var(--accent-red);
-            display: inline-block;
-            padding: 15px 30px;
-            border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-top: 15px;
-        }
-
-        .doctor-badge h3 {
-            color: var(--primary-blue);
-            font-size: 1.2rem;
-        }
-
-        .doctor-badge p {
-            color: var(--dark-grey);
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        /* Main Container Layout */
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--primary-blue);
-            position: relative;
-            font-size: 1.8rem;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--vibrant-green);
-            margin: 8px auto 0;
-        }
-
-        /* Health Packages Grid */
-        .grid-packages {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-
-        .package-card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid #eef0f3;
-            transition: transform 0.3s;
+        /* Hero Banner/Carousel Area (Metropolis Look) */
+        .hero-banner {
+            background: linear-gradient(90deg, #e6f0fa 0%, #edf7f0 100%);
+            padding: 40px 5%;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 280px;
+            border-bottom: 4px solid var(--metropolis-green);
         }
 
-        .package-card:hover {
-            transform: translateY(-5px);
+        .banner-text h2 {
+            font-size: 2.2rem;
+            color: var(--metropolis-blue);
+            font-weight: 900;
+            margin-bottom: 10px;
         }
 
-        .card-header {
-            background: var(--primary-blue);
-            color: var(--white);
-            padding: 20px;
-            font-weight: 600;
+        .banner-text .doctor-title {
+            background: var(--white);
+            padding: 12px 20px;
+            border-radius: 4px;
+            border-left: 4px solid var(--metropolis-red);
+            display: inline-block;
+            margin-top: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .doctor-title h3 {
+            color: var(--metropolis-blue);
             font-size: 1.1rem;
         }
 
-        .card-body {
-            padding: 20px;
-            flex-grow: 1;
+        /* Metropolis Booking Widget Form */
+        .booking-widget {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            width: 360px;
+            border-top: 4px solid var(--metropolis-blue);
         }
 
-        .card-body ul {
-            list-style: none;
+        .widget-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            text-align: center;
         }
 
-        .card-body ul li {
-            margin-bottom: 10px;
+        .widget-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
             font-size: 0.9rem;
+        }
+
+        .widget-form button {
+            width: 100%;
+            background: var(--metropolis-green);
+            color: var(--white);
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        /* Exact Metropolis Search Bar Section */
+        .search-container {
+            max-width: 800px;
+            margin: -25px auto 40px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-wrapper {
+            background: var(--white);
             display: flex;
             align-items: center;
-            gap: 10px;
+            border-radius: 30px;
+            padding: 5px 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
         }
 
-        .card-body ul li i {
-            color: var(--vibrant-green);
+        .search-wrapper i {
+            color: #a0aab5;
+            font-size: 1.2rem;
+            margin-right: 10px;
         }
 
-        .card-footer {
-            padding: 20px;
-            background: #fafafa;
-            border-top: 1px solid #eef0f3;
+        .search-wrapper input {
+            width: 100%;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            outline: none;
         }
 
-        /* Test Categories (Metropolis Style Icons) */
-        .grid-categories {
+        /* Section Global Layout */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .section-heading {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .section-subheading {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        /* Metropolis Grid for Risks/Categories */
+        .risk-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 20px;
             margin-bottom: 50px;
         }
 
-        .category-box {
+        .risk-item {
             background: var(--white);
-            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px 10px;
             text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-            border: 1px solid #eef0f3;
-            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .risk-item:hover {
+            border-color: var(--metropolis-blue);
+            box-shadow: 0 4px 15px rgba(0,74,173,0.1);
+        }
+
+        .risk-icon-wrapper {
+            width: 65px;
+            height: 65px;
+            background: #f0f7ff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 12px;
+        }
+
+        .risk-icon-wrapper i {
+            font-size: 1.6rem;
+            color: var(--metropolis-blue);
+        }
+
+        .risk-item p {
             font-size: 0.9rem;
-            color: var(--dark-grey);
-            transition: 0.3s;
+            font-weight: 700;
+            color: var(--text-dark);
         }
 
-        .category-box:hover {
-            border-color: var(--primary-blue);
-            color: var(--primary-blue);
-        }
-
-        .category-box i {
-            font-size: 2rem;
-            color: var(--vibrant-green);
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        /* Info Grid (Owner & Location) */
-        .info-section {
+        /* Metropolis Style Test Packages Grid */
+        .packages-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
         }
 
-        .info-card h4 {
-            color: var(--primary-blue);
-            font-size: 1.3rem;
+        .package-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pack-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            background: #fafbfc;
+        }
+
+        .pack-badge {
+            background: #e1f5fe;
+            color: var(--metropolis-blue);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .pack-title {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--text-dark);
+        }
+
+        .pack-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .pack-parameters {
+            font-size: 0.85rem;
+            color: var(--metropolis-green);
+            font-weight: 700;
             margin-bottom: 15px;
+        }
+
+        .test-list {
+            list-style: none;
+        }
+
+        .test-list li {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .info-card p {
-            margin-bottom: 10px;
-            font-size: 1rem;
+        .test-list li i {
+            color: var(--metropolis-green);
+            font-size: 0.8rem;
         }
 
-        /* Quick Floating Actions */
-        .floating-whatsapp {
+        /* Add to Cart / Action Area WITHOUT CHARGES */
+        .pack-footer {
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: center;
+        }
+
+        .book-now-btn {
+            width: 100%;
+            background: var(--metropolis-blue);
+            color: var(--white);
+            text-align: center;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .book-now-btn:hover {
+            background: var(--metropolis-green);
+        }
+
+        /* Info Segment (Lab Owner & Address details) */
+        .lab-info-panel {
+            background: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .info-block h4 {
+            font-size: 1.1rem;
+            color: var(--metropolis-blue);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .info-block p {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        /* Fixed WhatsApp Floating Button */
+        .whatsapp-float {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: #25d366;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
             color: white;
             width: 60px;
             height: 60px;
@@ -284,173 +393,193 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 9999;
             text-decoration: none;
         }
 
         /* Footer */
         footer {
-            background: #111;
-            color: #ccc;
+            background: #171a1c;
+            color: #a0aab5;
             text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            margin-top: 40px;
+            padding: 25px;
+            font-size: 0.85rem;
+            border-top: 3px solid var(--metropolis-blue);
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            header {
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .hero-banner {
                 flex-direction: column;
-                gap: 15px;
+                gap: 30px;
                 text-align: center;
             }
-            .logo-area {
-                flex-direction: column;
-                gap: 5px;
-            }
-            .hero h2 {
-                font-size: 1.8rem;
+            .booking-widget {
+                width: 100%;
+                max-width: 400px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Notification Bar -->
-    <div class="top-bar">
-        <i class="fa-solid fa-microscope"></i> Kadam Diagnostics — Precision in every test.
-    </div>
-
-    <!-- Header Navigation -->
-    <header>
-        <div class="logo-area">
-            <!-- logo.jpg ko aap apne image file path se replace kar sakte hain -->
-            <img src="logo.jpg" alt="Kadam Diagnostics Logo" class="logo-img" onerror="this.style.display='none'">
-            <div class="brand-text">
+    <!-- Header Navbar -->
+    <header class="main-header">
+        <div class="header-left">
+            <div class="logo-container">
+                <!-- Replace '1000355086.jpg' with your active path if needed -->
+                <img src="1000355086.jpg" alt="Kadam Diagnostics Logo" onerror="this.style.display='none'">
+            </div>
+            <div class="brand-info">
                 <h1>Kadam Diagnostics</h1>
                 <p>Precision in every test</p>
             </div>
         </div>
-        <div class="nav-buttons">
-            <a href="https://wa.me/918983590212" target="_blank" class="btn">
-                <i class="fa-brands fa-whatsapp"></i> Book a Test
+        <div class="header-right">
+            <a href="https://wa.me/918983590212" target="_blank" class="whatsapp-btn">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp Booking
             </a>
         </div>
     </header>
 
-    <!-- Hero / Doctor Profile Section -->
-    <section class="hero">
-        <h2>Welcome to Kadam Diagnostics</h2>
-        <p>Pandharpur's trusted destination for accurate pathology and diagnostic services.</p>
+    <!-- Hero Banner with Metropolis Style Widget -->
+    <section class="hero-banner">
+        <div class="banner-text">
+            <h2>Your Health, Our Priority</h2>
+            <p>Get accurate results from Pandharpur's leading diagnostic experts.</p>
+            <div class="doctor-title">
+                <h3>Dr. Pratibha Kadam</h3>
+                <p style="color:#666; font-size: 0.85rem; font-weight:700;">MBBS, MD PATHOLOGIST</p>
+            </div>
+        </div>
         
-        <div class="doctor-badge">
-            <h3>Dr. Pratibha Kadam</h3>
-            <p>MBBS, MD PATHOLOGIST</p>
+        <!-- Booking Form Widget -->
+        <div class="booking-widget">
+            <div class="widget-title">Book a Test Online</div>
+            <form class="widget-form" action="https://wa.me/918983590212" method="get" target="_blank">
+                <input type="text" placeholder="Enter Your Name" required>
+                <input type="tel" placeholder="Enter Mobile Number" required>
+                <button type="submit">Get a Call Back</button>
+            </form>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <div class="container">
+    <!-- Metropolis Search Bar Custom Component -->
+    <div class="search-container">
+        <div class="search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search for Tests, Health Checkups, Packages...">
+        </div>
+    </div>
 
-        <!-- Test Categories (Metropolis Style Icons) -->
-        <h3 class="section-title">Test by Health Risks</h3>
-        <div class="grid-categories">
-            <div class="category-box"><i class="fa-solid fa-heart-pulse"></i>Heart Tests</div>
-            <div class="category-box"><i class="fa-solid fa-capsules"></i>Liver Tests</div>
-            <div class="category-box"><i class="fa-solid fa-kidneys" style="color:var(--vibrant-green)"></i>Kidney Tests</div>
-            <div class="category-box"><i class="fa-solid fa-dna"></i>Thyroid Tests</div>
-            <div class="category-box"><i class="fa-solid fa-bone"></i>Bone & Joints</div>
-            <div class="category-box"><i class="fa-solid fa-droplet"></i>Diabetes</div>
+    <!-- Main Section Elements -->
+    <div class="main-container">
+
+        <!-- Risk Grid System -->
+        <h3 class="section-heading">Test by Health Risks</h3>
+        <p class="section-subheading">Choose from our frequently booked categories</p>
+        
+        <div class="risk-grid">
+            <div class="risk-item">
+                <div class="risk-icon-wrapper"><i class="fa-solid fa-heart-pulse"></i></div>
+                <p>Heart</p>
+            </div>
+            <div class="risk-item">
+                <div class="risk-icon-wrapper"><i class="fa-solid fa-baby"></i></div>
+                <p>Liver</p>
+            </div>
+            <div class="risk-item">
+                <div class="risk-icon-wrapper"><i class="fa-solid fa-hand-holding-droplet"></i></div>
+                <p>Kidney</p>
+            </div>
+            <div class="risk-item">
+                <div class="risk-icon-wrapper"><i class="fa-solid fa-dna"></i></div>
+                <p>Thyroid</p>
+            </div>
+            <div class="risk-item">
+                <div class="risk-icon-wrapper"><i class="fa-solid fa-bone"></i></div>
+                <p>Bone & Joint</p>
+            </div>
+            <div class="risk-item">
+                <div class="risk-icon-wrapper"><i class="fa-solid fa-droplet"></i></div>
+                <p>Diabetes</p>
+            </div>
         </div>
 
-        <!-- Health Packages Grid (No Charges Listed) -->
-        <h3 class="section-title">Popular Health Packages</h3>
-        <div class="grid-packages">
-            
+        <!-- Packages Grid (Charges Block Removed) -->
+        <h3 class="section-heading">Popular Health Packages</h3>
+        <p class="section-subheading">Choose comprehensive profiles for full-body wellness</p>
+
+        <div class="packages-grid">
             <!-- Package 1 -->
             <div class="package-card">
-                <div class="card-header">Kadam Executive Health Checkup</div>
-                <div class="card-body">
-                    <ul>
-                        <li><i class="fa-solid fa-circle-check"></i> Complete Blood Count (CBC)</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Liver Function Test (LFT)</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Kidney Function Test (KFT)</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Lipid Profile (Cholesterol)</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Blood Sugar Levels</li>
+                <div class="pack-header">
+                    <span class="pack-badge">POPULAR</span>
+                    <div class="pack-title">Kadam Routine Health Fit</div>
+                </div>
+                <div class="pack-body">
+                    <div class="pack-parameters">Includes 60+ Parameters</div>
+                    <ul class="test-list">
+                        <li><i class="fa-solid fa-check"></i> Complete Blood Count (CBC)</li>
+                        <li><i class="fa-solid fa-check"></i> Blood Glucose Fasting</li>
+                        <li><i class="fa-solid fa-check"></i> Kidney Function Assessment</li>
+                        <li><i class="fa-solid fa-check"></i> Lipid Profile Assessment</li>
                     </ul>
                 </div>
-                <div class="card-footer">
-                    <center>Best for routine annual checkups</center>
+                <div class="pack-footer">
+                    <a href="https://wa.me/918983590212" target="_blank" class="book-now-btn">Select Package</a>
                 </div>
             </div>
 
             <!-- Package 2 -->
             <div class="package-card">
-                <div class="card-header">Kadam Fever & Infection Profile</div>
-                <div class="card-body">
-                    <ul>
-                        <li><i class="fa-solid fa-circle-check"></i> CBC & ESR Count</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Malaria / Typhoid Screening</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Urine Routine Examination</li>
+                <div class="pack-header">
+                    <span class="pack-badge">EXECUTIVE</span>
+                    <div class="pack-title">Kadam Comprehensive Wellness</div>
+                </div>
+                <div class="pack-body">
+                    <div class="pack-parameters">Includes 80+ Parameters</div>
+                    <ul class="test-list">
+                        <li><i class="fa-solid fa-check"></i> Full Liver Function Profile</li>
+                        <li><i class="fa-solid fa-check"></i> Complete Thyroid Profile</li>
+                        <li><i class="fa-solid fa-check"></i> Vitamin D & B12 Levels</li>
+                        <li><i class="fa-solid fa-check"></i> HbA1c (Average Sugar)</li>
                     </ul>
                 </div>
-                <div class="card-footer">
-                    <center>Recommended for acute fever</center>
+                <div class="pack-footer">
+                    <a href="https://wa.me/918983590212" target="_blank" class="book-now-btn">Select Package</a>
                 </div>
             </div>
-
-            <!-- Package 3 -->
-            <div class="package-card">
-                <div class="card-header">Women's Wellness Special</div>
-                <div class="card-body">
-                    <ul>
-                        <li><i class="fa-solid fa-circle-check"></i> Thyroid Profile (T3, T4, TSH)</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Calcium & Vitamin D3 Check</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Iron Deficiency Profile</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Complete Hemogram</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <center>Designed for comprehensive female health</center>
-                </div>
-            </div>
-
         </div>
 
-        <!-- Contact & Lab Information -->
-        <div class="info-section">
-            
-            <!-- Owner & Contact Card -->
-            <div class="info-card">
-                <h4><i class="fa-solid fa-address-book"></i> Contact Details</h4>
+        <!-- Contact & Admin Panel Details -->
+        <div class="lab-info-panel">
+            <div class="info-block">
+                <h4><i class="fa-solid fa-user-tie"></i> Management</h4>
                 <p><strong>Owner:</strong> Mr. Ajay Kadam</p>
-                <p><strong><i class="fa-solid fa-phone"></i> Call Us:</strong> <a href="tel:8087870121" style="color: inherit; text-decoration: none;">8087870121</a></p>
-                <p><strong><i class="fa-brands fa-whatsapp"></i> WhatsApp:</strong> <a href="https://wa.me/918983590212" target="_blank" style="color: var(--vibrant-green); text-decoration: none; font-weight: bold;">+91 89835 90212</a></p>
+                <p><strong>Phone Support:</strong> <a href="tel:8087870121" style="color: inherit; text-decoration: none;">8087870121</a></p>
+                <p><strong>WhatsApp Support:</strong> +91 89835 90212</p>
             </div>
-
-            <!-- Location Card -->
-            <div class="info-card">
-                <h4><i class="fa-solid fa-location-dot"></i> Our Address</h4>
+            <div class="info-block">
+                <h4><i class="fa-solid fa-map-location-dot"></i> Visit Our Lab</h4>
                 <p><strong>Kadam Diagnostics</strong></p>
                 <p>Tulsi Vrindavan, Padmavati Plaza,</p>
                 <p>Pandharpur, Maharashtra</p>
             </div>
-
         </div>
 
     </div>
 
-    <!-- Floating WhatsApp Action Button -->
-    <a href="https://wa.me/918983590212" class="floating-whatsapp" target="_blank" title="Chat on WhatsApp">
+    <!-- Floating Action Element -->
+    <a href="https://wa.me/918983590212" class="whatsapp-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Footer -->
+    <!-- Footer Segment -->
     <footer>
-        <p>&copy; 2026 Kadam Diagnostics, Pandharpur. All Rights Reserved.</p>
+        <p>&copy; 2026 Kadam Diagnostics | Developed with Metropolis Styling Standard.</p>
     </footer>
 
 </body>
